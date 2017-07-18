@@ -10,5 +10,9 @@
             <h1>Hello Sinatra World!!</h1>
             <p>My First Sinatra App</p>
         </div>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" value="ファイルを選択" name="image">
+            <input type="submit" value="送信">
+        </form>
     </body>
 </html>
