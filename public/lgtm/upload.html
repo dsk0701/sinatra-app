@@ -84,16 +84,22 @@
                     -->
                     <form class="mbr-form" action="/upload" method="post" data-form-title="UPLOAD FORM" enctype="multipart/form-data">
                         <input type="hidden" value="T1ByDCfa9WojYI7A0HgOUXn5DcpGgheSK4HPh/c1JFDeBn6TJhA1ED8Vyq8sFegdJMBXd3ghxmkyY4GvwmUWlTSxeEmfDo0Q/QnCLSyVKarEZg8a8MsOqNlgOZih2InP" data-form-email="true">
-                        <div class="mbr-subscribe mbr-subscribe-dark input-group">
-                            <label class="input-group-btn" for="file-selection">
-                                <span class="btn btn-primary-outline">
-                                    BROWSE...
-                                    <input type="file" id="file-selection" style="display:none;" required="">
-                                </span>
-                            </label>
-                            <input type="text" class="form-control text-black" placeholder="select file..." readonly="">
+                        <div id="drag-drop-area" class="bg-info" style="text-align: center">
+                            <div id="drag-drop-inside">
+                                <p class="drag-drop-info">Drop LGTM image here</p>
+                                <p>Or</p>
+                                    <label class="input-group-btn" for="file-selection">
+                                        <span class="btn btn-secondary">
+                                            SELECT FILE
+                                            <input type="file" id="file-selection" style="display:none;" required="">
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control text-black" placeholder="selected file..." readonly="">
+                            </div>
                         </div>
-                        <div>
+                                <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                                </div>
+                        <div class="mbr-subscribe mbr-subscribe-dark">
                             <button type="submit" class="btn btn-primary">UPLOAD</button>
                         </div>
                     </form>
