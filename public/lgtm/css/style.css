@@ -1,0 +1,12 @@
+
+.drag-drop-area {
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-color: #d9edf7;
+}
+
+.drag-drop-inside {
+  border: 2px dashed #1b1b1b;
+}
+
