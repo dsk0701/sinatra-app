@@ -89,24 +89,46 @@
                             <div class="drag-drop-inside">
                                 <p class="drag-drop-info">Drop LGTM image here</p>
                                 <p>Or</p>
-                                <label for="file-selection" class="input-group-btn">
+                                <label for="file-selection">
                                     <span class="btn btn-secondary">
                                         SELECT FILE
                                         <input type="file" id="file-selection" style="display:none;" required="">
                                     </span>
                                 </label>
-                                <div class="row">
-                                    <div class="col-xs-4"></div>
-                                    <div class="col-xs-4">
-                                        <input type="text" class="form-control text-black " placeholder="selected file..." readonly="">
-                                    </div>
-                                    <div class="col-xs-4"></div>
-                                </div>
                             </div>
                         </div>
-                        <div class="mbr-subscribe mbr-subscribe-dark">
+
+                        <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                            <input type="text" id="input-text-file" class="form-control text-black" placeholder="selected file..." readonly="">
+                            <span class="input-group-btn"><button type="submit" class="btn btn-primary">UPLOAD</button></span>
+                        </div>
+
+                        <!--
+                        <div class="mbr-subscribe mbr-subscribe-dark input-group">
+                            <input type="email" class="form-control" name="email" required="" data-form-field="Email" placeholder="Enter Your Email Address..." id="form2-b-email">
+                            <span class="input-group-btn"><button type="submit" class="btn btn-primary">SUBSCRIBE</button></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">UPLOAD</button>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <input type="text" id="input-text-file" class="form-control text-black " placeholder="selected file..." readonly="">
+                            </div>
+                        </div>
+                        <div class="container">
+                            <input type="text" class="form-control text-black " placeholder="selected file..." readonly="">
                             <button type="submit" class="btn btn-primary">UPLOAD</button>
                         </div>
+                        <div class="row">
+                            <div class="col-xs-4"></div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control text-black " placeholder="selected file..." readonly="">
+                            </div>
+                            <div class="col-xs-4">
+                                <button type="submit" class="btn btn-primary">UPLOAD</button>
+                            </div>
+                        </div>
+                        -->
                     </form>
                 </div>
             </div>
