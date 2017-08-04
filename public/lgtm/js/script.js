@@ -10,7 +10,9 @@ var dropArea = $('#drag-drop-area')
 dropArea.on('drop',function(evt){
     evt.preventDefault();
     dropArea.removeClass('drag-drop-outside-over')
-    console.log(evt.originalEvent.dataTransfer.files);
+
+    var file = evt.originalEvent.dataTransfer.files[0]
+    $('#input-text-file').val(file.name)
 });
 
 dropArea.on('dragover',function(evt){
