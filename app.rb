@@ -11,4 +11,6 @@ end
 
 post "/upload" do
   'upload called!'
+  logger.info "params: " + params.inspect
+  # logger.info params
 end

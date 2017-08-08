@@ -31,16 +31,6 @@ dropArea.on('dragleave',function(evt) {
     console.log("dragleave");
 });
 
-// $('#button-upload').on('click',function(evt) {
-//     console.log("button-upload::onclick");
-//     // TODO: Call upload api and update screen.
-// 
-//     evt.preventDefault();
-//     $(this.form).submit();
-//     $(this.form).find("textarea, :text, select").val("");
-//     return false;
-// });
-
 $('#form-upload').on('submit',function(evt) {
     console.log("form-upload::submit()");
     evt.preventDefault();
@@ -49,7 +39,7 @@ $('#form-upload').on('submit',function(evt) {
         url: 'http://localhost:4567/upload',
         type:'POST',
         // dataType: 'jsonp',
-        data : { key : 'value' },
+        data : { key : $(':file').val() },
         timeout:10000,
         success: function(data) {
             // TODO: 成功表示する
