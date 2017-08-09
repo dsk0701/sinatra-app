@@ -13,8 +13,9 @@ end
 post "/upload" do
   'upload called!'
   logger.info "params: " + params.inspect
+  "".to_json
 
-  body = request.body.read
-  logger.info "body: " + body.inspect
-  body.to_json
+  # body = request.body.read
+  # logger.info "body: " + body.inspect
+  # body.to_json
 end
