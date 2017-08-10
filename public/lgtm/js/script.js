@@ -1,6 +1,5 @@
-var LGTM = LGTM || {};
 
-$(document).on('change', ':file', function() {
+$('#file-selection').on('change', function() {
     var input = $(this),
     numFiles = input.get(0).files ? input.get(0).files.length : 1,
     label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
@@ -13,9 +12,8 @@ dropArea.on('drop',function(evt) {
     dropArea.removeClass('drag-drop-outside-over')
 
     var files = evt.originalEvent.dataTransfer.files; // FileList
-    var file = files[0];
-    $('#input-text-file').val(file.name);
-    LGTM.file = file;
+    $('#input-text-file').val(files[0].name);
+    $('#file-selection').get(0).files = files;  // input type=file にセット
 });
 
 dropArea.on('dragover',function(evt) {
@@ -32,17 +30,6 @@ dropArea.on('dragleave',function(evt) {
     evt.preventDefault();
     dropArea.removeClass('drag-drop-outside-over');
     console.log("dragleave");
-});
-
-$('#button-upload').on('click',function(evt) {
-    console.log("button-upload::click()");
-
-    if (LGTM.file instanceof File) {
-        console.log("File Object!");
-        upload(LGTM.file)
-    } else {
-        console.log("Not File Object!");
-    }
 });
 
 $('#form-upload').on('submit',function(evt) {
