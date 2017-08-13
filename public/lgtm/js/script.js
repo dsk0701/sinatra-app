@@ -35,14 +35,12 @@ dropArea.on('dragleave',function(evt) {
 $('#form-upload').on('submit',function(evt) {
     console.log("form-upload::submit()");
     evt.preventDefault();
+    var form = $(this);
+    var button = form.find('button[type="submit"]');
 
-    var files = $(':file').get(0).files;  // FileList
-    upload(files[0])
-});
-
-function upload(file) {
     var fd = new FormData();
-    fd.append("file", file);
+    var files = $(':file').get(0).files;  // FileList
+    fd.append("file", files[0]);
 
     $.ajax({
         url: 'http://localhost:4567/upload',
@@ -51,7 +49,17 @@ function upload(file) {
         data : fd,
         processData : false,
         contentType : false,
+        beforeSend: function(xhr, settings) {
+            // ボタンを無効化し、二重送信を防止
+            button.attr('disabled', true);
+        },
+        complete: function(xhr, textStatus) {
+            // ボタンを有効化し、再送信を許可
+            button.attr('disabled', false);
+        },
         success: function(data) {
+            // フォームをクリアする
+            form[0].reset()
             // TODO: 成功表示する
             console.log("upload success");
         },
@@ -61,5 +69,5 @@ function upload(file) {
             alert("ng");
         }
     });
-};
+});
 
