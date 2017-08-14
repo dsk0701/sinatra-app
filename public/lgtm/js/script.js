@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $('.alert-success').hide();
+    $('.alert-danger').hide();
+});
 
 $('#file-selection').on('change', function() {
     var input = $(this),
@@ -60,13 +64,10 @@ $('#form-upload').on('submit',function(evt) {
         success: function(data) {
             // フォームをクリアする
             form[0].reset()
-            // TODO: 成功表示する
-            console.log("upload success");
+            $('.alert-success').show();
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-            // TODO: エラー表示する
-            console.log("upload failed");
-            alert("ng");
+            $('.alert-danger').show();
         }
     });
 });
