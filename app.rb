@@ -2,6 +2,9 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'json'
 
+
+IMAGE_DIR = './public/images'
+
 get '/' do
   'root'
 end
@@ -11,11 +14,28 @@ get '/path' do
 end
 
 post "/upload" do
-  'upload called!'
   logger.info "params: " + params.inspect
-  "".to_json
 
-  # body = request.body.read
-  # logger.info "body: " + body.inspect
-  # body.to_json
+  file = params[:file]
+  unless file
+    return status 400
+  end
+
+  allowedContentTypes = [
+    'image/gif',
+    'image/png',
+    'image/jpeg',
+  ]
+  allowedContentTypes = %w(image/gif image/png image/jpeg)
+
+  contentType = file[:type]
+  # TODO: Check contentType.
+
+  path = "#{IMAGE_DIR}/#{file[:filename]}"
+  File.open(path, 'wb') do |f|
+    p file[:tempfile]
+    f.write file[:tempfile].read
+  end
+
+  "".to_json
 end

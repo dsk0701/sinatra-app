@@ -39,6 +39,10 @@ dropArea.on('dragleave',function(evt) {
 $('#form-upload').on('submit',function(evt) {
     console.log("form-upload::submit()");
     evt.preventDefault();
+
+    $('.alert-success').hide();
+    $('.alert-danger').hide();
+
     var form = $(this);
     var button = form.find('button[type="submit"]');
 
