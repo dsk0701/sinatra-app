@@ -15,3 +15,23 @@
     padding-top: 1em;
 }
 
+.image {
+    position: relative;
+    /* background-color: orange; */
+    background-color: #F5F5F5;
+    height: 250px;
+    overflow-y: hidden;
+}
+
+.image img {
+    object-fit: contain;
+
+    /* 縦横センタリング */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+    text-align: center;/*一応BOX内の文字も中央寄せ*/
+}
