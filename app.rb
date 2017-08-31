@@ -10,6 +10,10 @@ get '/' do
   erb :index
 end
 
+get "/upload" do
+  erb :upload
+end
+
 post "/upload" do
   logger.info "params: " + params.inspect
 
