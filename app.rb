@@ -6,11 +6,8 @@ require 'json'
 IMAGE_DIR = './public/images'
 
 get '/' do
-  'root'
-end
-
-get '/path' do
-  'path'
+  @title = "Hello World!"
+  erb :index
 end
 
 post "/upload" do
@@ -21,15 +18,9 @@ post "/upload" do
     return status 400
   end
 
-  allowedContentTypes = [
-    'image/gif',
-    'image/png',
-    'image/jpeg',
-  ]
-  allowedContentTypes = %w(image/gif image/png image/jpeg)
-
   contentType = file[:type]
   # TODO: Check contentType.
+  allowedContentTypes = %w(image/gif image/png image/jpeg)
 
   path = "#{IMAGE_DIR}/#{file[:filename]}"
   File.open(path, 'wb') do |f|
