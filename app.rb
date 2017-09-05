@@ -1,9 +1,18 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'json'
+require 'bundler'
+require './app/uploaders/image_uploader'
+Bundler.require
 
 
 IMAGE_DIR = './public/images'
+
+configure do
+    ActiveRecord::Base.configurations = YAML.load_file('db/database.yml')
+    ActiveRecord::Base.establish_connection(Sinatra::Application.environment)
+end
+
 
 get '/' do
   @title = "Hello World!"
@@ -12,6 +21,13 @@ end
 
 get "/upload" do
   erb :upload
+end
+
+post "/new" do
+  # uploader = ImageUploader.new
+  uploader = Some.new
+  logger.info "uploader: " + uploader.inspect
+  logger.info "params: " + params.inspect
 end
 
 post "/upload" do

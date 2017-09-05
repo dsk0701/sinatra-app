@@ -26,6 +26,7 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.1)
     mustermann (1.0.0)
+    mysql2 (0.4.9)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -56,6 +57,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   carrierwave
+  mysql2
   rake
   sinatra
   sinatra-activerecord

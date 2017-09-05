@@ -7,4 +7,5 @@ gem 'carrierwave'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'rake'
+gem 'mysql2'
 

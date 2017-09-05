@@ -1,0 +1,7 @@
+development:
+  adapter: mysql2
+  database: lgtm #データベース名
+  host: localhost
+  username: root #ユーザー名
+  password: pass #パスワード
+  encoding: utf8
