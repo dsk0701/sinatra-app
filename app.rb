@@ -1,16 +1,21 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'json'
-require 'bundler'
 require './app/uploaders/image_uploader'
+# gemを一括require
+require 'bundler'
 Bundler.require
 
 
 IMAGE_DIR = './public/images'
 
 configure do
-    ActiveRecord::Base.configurations = YAML.load_file('db/database.yml')
-    ActiveRecord::Base.establish_connection(Sinatra::Application.environment)
+  # Sinatra::Application.environment に ENV['APP_ENV'] が設定されているので、
+  # APP_ENV=production ruby app.rb
+  # で環境を切り替えることができる。
+  ActiveRecord::Base.configurations = YAML.load(ERB.new(File.read("db/database.yml")).result)
+  # puts "ActiveRecord::Base.configurations: " + ActiveRecord::Base.configurations.inspect
+  ActiveRecord::Base.establish_connection(Sinatra::Application.environment)
 end
 
 
