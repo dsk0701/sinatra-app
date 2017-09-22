@@ -31,30 +31,12 @@ end
 post "/new" do
   image = Image.new(file: params[:file], comment: "")
   if image.save
-    response = {code: 200, messages: "成功しました"}
+    logger.info "Upload success"
+    response = {code: 200, messages: "success"}
   else
+    logger.error "Upload failed"
+    status 400
     response = {code: 400, messages: image.errors.full_messages}
   end
   response.to_json
-end
-
-post "/upload" do
-  logger.info "params: " + params.inspect
-
-  file = params[:file]
-  unless file
-    return status 400
-  end
-
-  contentType = file[:type]
-  # TODO: Check contentType.
-  allowedContentTypes = %w(image/gif image/png image/jpeg)
-
-  path = "./public/images/#{file[:filename]}"
-  File.open(path, 'wb') do |f|
-    p file[:tempfile]
-    f.write file[:tempfile].read
-  end
-
-  "".to_json
 end
