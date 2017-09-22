@@ -3,7 +3,18 @@ require 'carrierwave/orm/activerecord'
 
 
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
   storage :file
+  permissions 0666
+
+  # リサイズ. 小さければ何もしない.
+  process resize_to_limit: [800, 800]
+
+  # サムネイル用にくり抜き.
+  version :thumb do
+    process resize_to_fill: [200,200]
+  end
 
   def store_dir
     'images'
