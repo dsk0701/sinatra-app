@@ -20,7 +20,16 @@ end
 
 
 get '/' do
-  @title = "Hello World!"
+  @image_files = [
+    'lgtm/assets/images/bike-small.jpg',
+    'lgtm/assets/images/code-man-small.jpg',
+    'lgtm/assets/images/coworkers-small.jpg',
+    'lgtm/assets/images/desktop-small.jpg',
+    'lgtm/assets/images/room-laptop-small.jpg',
+    'lgtm/assets/images/table-small.jpg',
+    'lgtm/assets/images/windows-books-small.jpg',
+    'lgtm/assets/images/working-area-small.jpg',
+  ]
   erb :index
 end
 

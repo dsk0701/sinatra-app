@@ -69,90 +69,14 @@
         <div class=" mbr-gallery-layout-default">
             <div>
                 <div>
-                    <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Awesome" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="0" data-toggle="modal" class="image">
-                            
-                            
-
-                            <img alt="" src="lgtm/assets/images/bike-small.jpg">
-                            
-                            <span class="icon-focus"></span>
-                            
+                    <% @image_files.each do |image_file| %>
+                        <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-video-url="false">
+                            <div href="#lb-gallery3-8" data-toggle="modal" class="image">
+                                <img alt="" src=<%= image_file %>>
+                                <span class="icon-focus"></span>
+                            </div>
                         </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Responsive" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="1" data-toggle="modal" class="image">
-                            
-                            
-
-                            <!--
-                            <img alt="" src="lgtm/assets/images/code-man-small.jpg">
-                            -->
-                            <img alt="" src="../images/logo.png">
-                            
-                            <span class="icon-focus"></span>
-                            
-                        </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Creative" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="2" data-toggle="modal">
-                            
-                            
-
-                            <img alt="" src="lgtm/assets/images/coworkers-small.jpg">
-                            
-                            <span class="icon-focus"></span>
-                            
-                        </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Animated" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="3" data-toggle="modal">
-                            
-                            
-
-                            <img alt="" src="lgtm/assets/images/desktop-small.jpg">
-                            
-                            <span class="icon-focus"></span>
-                            
-                        </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Awesome" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="4" data-toggle="modal">
-                            
-                            
-
-                            <img alt="" src="lgtm/assets/images/room-laptop-small.jpg">
-                            
-                            <span class="icon-focus"></span>
-                            
-                        </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Beautiful" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="5" data-toggle="modal">
-                            
-                            
-
-                            <img alt="" src="lgtm/assets/images/table-small.jpg">
-                            
-                            <span class="icon-focus"></span>
-                            
-                        </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Responsive" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="6" data-toggle="modal">
-                            
-                            
-
-                            <img alt="" src="lgtm/assets/images/windows-books-small.jpg">
-                            
-                            <span class="icon-focus"></span>
-                            
-                        </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="Animated" data-video-url="false">
-                        <div href="#lb-gallery3-8" data-slide-to="7" data-toggle="modal">
-                            
-                            
-
-                            <img alt="" src="lgtm/assets/images/working-area-small.jpg">
-                            
-                            <span class="icon-focus"></span>
-                            
-                        </div>
-                    </div>
+                    <% end %>
                 </div>
             </div>
             <div class="clearfix"></div>
