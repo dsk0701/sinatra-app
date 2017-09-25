@@ -20,16 +20,10 @@ end
 
 
 get '/' do
-  @image_files = [
-    'lgtm/assets/images/bike-small.jpg',
-    'lgtm/assets/images/code-man-small.jpg',
-    'lgtm/assets/images/coworkers-small.jpg',
-    'lgtm/assets/images/desktop-small.jpg',
-    'lgtm/assets/images/room-laptop-small.jpg',
-    'lgtm/assets/images/table-small.jpg',
-    'lgtm/assets/images/windows-books-small.jpg',
-    'lgtm/assets/images/working-area-small.jpg',
-  ]
+  files = Image.pluck(:file).sample(8)
+  @thumb_files = Image.where(file: files).map {|image|
+    image.file.thumb.url
+  }
   erb :index
 end
 
