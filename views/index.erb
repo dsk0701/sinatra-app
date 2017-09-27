@@ -69,9 +69,9 @@
         <div class=" mbr-gallery-layout-default">
             <div>
                 <div>
-                    <% @thumb_files.each do |thumb_file| %>
+                    <% @thumb_files.each_with_index do |thumb_file, i| %>
                         <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-video-url="false">
-                            <div href="#lb-gallery3-8" data-toggle="modal" class="image">
+                            <div href="#lb-gallery3-8" data-slide-to=<%= i %> data-toggle="modal" class="image">
                                 <img alt="" src=<%= thumb_file %>>
                                 <span class="icon-focus"></span>
                             </div>
