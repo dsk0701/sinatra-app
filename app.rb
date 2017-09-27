@@ -21,9 +21,14 @@ end
 
 get '/' do
   files = Image.pluck(:file).sample(8)
-  @thumb_files = Image.where(file: files).map {|image|
+  random_images = Image.where(file: files)
+  @thumb_files = random_images.map {|image|
     image.file.thumb.url
   }
+  @image_files = random_images.map {|image|
+    image.file.url
+  }
+  logger.info @image_files
   erb :index
 end
 
