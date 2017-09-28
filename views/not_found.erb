@@ -63,63 +63,15 @@
 
 </section>
 
-<section class="engine"><a rel="external" href="https://mobirise.com">Website Maker</a></section><section class="mbr-gallery mbr-section mbr-section-nopadding mbr-slider-carousel mbr-after-navbar" id="gallery3-8" data-filter="false" style="background-color: rgb(239, 239, 239); padding-top: 6rem; padding-bottom: 1.5rem;">
-    <!-- Filter -->
-    
-
-    <!-- Gallery -->
-    <div class="mbr-gallery-row container">
-        <div class=" mbr-gallery-layout-default">
-            <div>
-                <div>
-                    <% @thumb_files.each_with_index do |thumb_file, i| %>
-                        <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-video-url="false">
-                            <div href="#lb-gallery3-8" data-slide-to=<%= i %> data-toggle="modal" class="image">
-                                <img alt="" src=<%= thumb_file %>>
-                                <span class="icon-focus"></span>
-                            </div>
-                        </div>
-                    <% end %>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery3-8">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <ol class="carousel-indicators">
-                        <% @image_files.count.times do |i| %>
-                            <li data-app-prevent-settings="" data-target="#lb-gallery3-8" <%= 'class="active"' if i == 0 %> data-slide-to=<%= i %>></li>
-                        <% end %>
-                    </ol>
-                    <div class="carousel-inner">
-                        <% @image_files.each_with_index do |image_file, i| %>
-                            <div class="carousel-item <%= 'active' if i == 0 %>">
-                                <img alt="" src=<%= image_file %>>
-                            </div>
-                        <% end %>
-                    </div>
-                    <a class="left carousel-control" role="button" data-slide="prev" href="#lb-gallery3-8">
-                        <span class="icon-prev" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" role="button" data-slide="next" href="#lb-gallery3-8">
-                        <span class="icon-next" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                    <a class="close" href="#" role="button" data-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                        <span class="sr-only">Close</span>
-                    </a>
+<section class="mbr-section mbr-after-navbar" style="background-color: rgb(255, 255, 255); padding-top: 220px; padding-bottom: 160px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-xs-center">
+                    <h3 class="mbr-section-title display-2">404 Not Found</h3>
+                    <small class="mbr-section-subtitle">Please check the URL to ensure that the path is collect.</small>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-2" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">

@@ -48,3 +48,7 @@ post "/new" do
   end
   response.to_json
 end
+
+not_found do
+  erb :not_found
+end
