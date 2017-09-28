@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
 require 'json'
 require './app/uploaders/image_uploader'
 require './app/models/image'

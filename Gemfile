@@ -2,11 +2,10 @@
 source "https://rubygems.org"
 
 gem "sinatra"
-gem "sinatra-contrib"
-gem 'carrierwave'
+gem "rerun"
+gem "carrierwave"
 gem "mini_magick"
-gem 'activerecord'
-gem 'sinatra-activerecord'
-gem 'rake'
-gem 'mysql2'
-
+gem "activerecord"
+gem "sinatra-activerecord"
+gem "rake"
+gem "mysql2"
