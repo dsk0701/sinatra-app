@@ -13,7 +13,7 @@ $('#file-selection').on('change', function() {
 var dropArea = $('#drag-drop-area')
 dropArea.on('drop',function(evt) {
     evt.preventDefault();
-    dropArea.removeClass('drag-drop-outside-over')
+    dropArea.removeClass('drag-drop-outside-over');
 
     var files = evt.originalEvent.dataTransfer.files; // FileList
     $('#input-text-file').val(files[0].name);
@@ -67,7 +67,7 @@ $('#form-upload').on('submit',function(evt) {
         },
         success: function(data) {
             // フォームをクリアする
-            form[0].reset()
+            form[0].reset();
             $('.alert-success').show();
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -76,3 +76,6 @@ $('#form-upload').on('submit',function(evt) {
     });
 });
 
+$('.carousel-item > img').on('click', function () {
+    window.open($(this).attr('src'));
+});
