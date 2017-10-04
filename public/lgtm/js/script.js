@@ -76,6 +76,24 @@ $('#form-upload').on('submit',function(evt) {
     });
 });
 
-$('.carousel-item > img').on('click', function () {
-    window.open($(this).attr('src'));
+$('.carousel-item').on('click', function () {
+    document.execCommand('copy');
+});
+
+window.addEventListener("copy" , function(e){
+    e.preventDefault();
+
+    // DataTransfer オブジェクトを取得する
+    var data_transfer = (e.clipboardData) || (window.clipboardData);
+    data_transfer.setData('text', $('.carousel-item > img').attr('src'));
+    $.toast({
+        text: 'Copied!',
+        bgColor: '#FF1356',
+        showHideTransition: 'fade', // fade, slide or plain
+        allowToastClose: false,
+        loader: false,
+        hideAfter: 2000,
+        textAlign: 'center',
+        position: 'top-center'
+    });
 });
