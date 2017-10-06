@@ -1,6 +1,6 @@
 production:
   adapter: mysql2
-  host: localhost
+  host: <%= ENV['PRD_DATABASE_HOST'] %> # ホスト
   username: <%= ENV['PRD_DATABASE_USERNAME'] %> #ユーザー名
   password: <%= ENV['PRD_DATABASE_PASSWORD'] %> #パスワード
   database: <%= ENV['PRD_DATABASE_NAME'] %> #データベース名
@@ -8,7 +8,7 @@ production:
 
 development:
   adapter: mysql2
-  host: localhost
+  host: <%= ENV['DEV_DATABASE_HOST'] %> # ホスト
   username: <%= ENV['DEV_DATABASE_USERNAME'] %> #ユーザー名
   password: <%= ENV['DEV_DATABASE_PASSWORD'] %> #パスワード
   database: <%= ENV['DEV_DATABASE_NAME'] %> #データベース名
