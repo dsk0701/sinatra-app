@@ -85,7 +85,7 @@ window.addEventListener("copy" , function(e){
 
     // DataTransfer オブジェクトを取得する
     var data_transfer = (e.clipboardData) || (window.clipboardData);
-    data_transfer.setData('text', $('.carousel-item > img').attr('src'));
+    data_transfer.setData('text', location.host + $('.carousel-item.active > img').attr('src'));
     $.toast({
         text: 'Copied!',
         bgColor: '#FF1356',
