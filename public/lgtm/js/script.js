@@ -51,7 +51,7 @@ $('#form-upload').on('submit',function(evt) {
     fd.append("file", files[0]);
 
     $.ajax({
-        url: 'http://localhost:4567/new',
+        url: '/new',
         type:'POST',
         dataType: 'json',
         data : fd,
