@@ -377,7 +377,7 @@
           "title": "UPLOAD FORM",
           "subtitle": "Upload your LGTM image",
           "form": {
-            "action": "developer@mixin.tech",
+            "action": "developer@mixin.tokyo",
             "alerts": {
               "success": "Thanks for filling out form!"
             },
