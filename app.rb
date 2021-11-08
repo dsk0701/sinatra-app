@@ -35,6 +35,11 @@ get "/upload" do
   erb :upload
 end
 
+not_found do
+  erb :not_found
+end
+
+# API
 post "/new" do
   image = Image.new(file: params[:file], comment: "")
   if image.save
@@ -48,6 +53,18 @@ post "/new" do
   response.to_json
 end
 
-not_found do
-  erb :not_found
+get '/images' do
+  offset = params['offset'] or 0
+  count = params['count'] or 20
+
+  files = Image.pluck(:file)
+  random_images = Image.where(file: files).limit(count).offset(offset)
+  @image_files = random_images.map {|image|
+    image.file
+  }
+  logger.info @image_files
+  response = {
+    images: @image_files,
+  }
+  response.to_json
 end
